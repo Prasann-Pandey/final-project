@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="loginStyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <div class="container">
+        <h1>Sign Up</h1>
+        <form action="#">
+            <div>
+                <p class="label email">Email</p>
+                <input type="email" name="email">
+            </div>
+            <div>
+                <p class="label username">Username</p>
+                <input type="text" name="username">
+            </div>
+            <div>
+                <p class="label password">Password</p>
+                <input type="password" name="password">
+            </div>
+            <div>
+                <p class="label confirm-password">Confirm Password</p>
+                <input type="password" name="confirm">
+            </div>
+            <div clas="btn">
+                <button>Sign Up</button>
+            </div>
+        </form>
+    </div> -->
+
+    <!-- login form -->
+    <div class="container">
+        <h1>Sign In</h1>
+        <form action="#" class="user-login">
+            <div>
+                <p class="label email">Email</p>
+                <input type="email" name="email" class="user-email" required>
+            </div>
+            <div>
+                <p class="label password">Password</p>
+                <input type="password" name="password" class="user-password" required>
+            </div>
+            <div clas="btn">
+                <button>Sign In</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+<script src="./scripts/loginStyle.js"></script>
+<script src="./scripts/login.js"></script>
+
+</html>

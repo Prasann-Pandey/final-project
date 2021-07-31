@@ -17,6 +17,16 @@ const loginUser = (email, password) => {
         .then((userCredential) => {
             var user = userCredential.user;
             console.log("user have logged in")
+
+            firebase.firestore().collection('users').doc(user.uid).get()
+                .then(res => {
+                    //User Name
+                    console.log(res.data())
+                })
+
+            //UID of user
+            console.log(user.uid)
+
             //Function for retriving all events data
             firebase.firestore().collection('events').get()
                 .then(res => {

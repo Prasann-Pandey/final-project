@@ -2,10 +2,9 @@ const firstName = document.querySelector(".first-name")
 const lastName = document.querySelector(".last-name")
 const email = document.querySelector(".email")
 const mobileNum = document.querySelector(".mobile")
+const interest = document.querySelector(".select-st")
 const branch = document.querySelector(".branch")
-
 const eventForm = document.querySelector(".signup")
-
 const thankyou = document.querySelector(".thank-you")
 thankyou.style.display = "none"
 
@@ -29,7 +28,8 @@ eventForm.addEventListener("submit", (e) => {
     firebase.firestore().collection("events").add({
         "first_name": firstName.value,
         "last_name": lastName.value,
-        "mobile": 7267862,
+        "mobile": mobileNum.value,
+        "interest": interest.value,
         "email": email.value
     })
         .then(res => {

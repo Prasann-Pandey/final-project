@@ -48,6 +48,7 @@ const loginUser = (email, password) => {
                         temp.innerHTML = `<td>${el.data().first_name}</td>
                         <td>${el.data().last_name}</td>
                         <td>${el.data().email}</td>
+                        <td>${el.data().interest}</td>
                         <td>${el.data().mobile}</td>`
                         tbodyParent.appendChild(temp)
 

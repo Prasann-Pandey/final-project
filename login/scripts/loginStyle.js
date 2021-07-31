@@ -1,6 +1,10 @@
 // Function related to layouts 
 const labels = document.querySelectorAll('.label')
 const formInputs = document.querySelectorAll('form div input')
+
+
+
+
 formInputs.forEach(formInput => {
     formInput.addEventListener('mouseover', () => {
         formInput.previousElementSibling.classList.add('label-up')

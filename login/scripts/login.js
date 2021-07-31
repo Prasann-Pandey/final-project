@@ -29,10 +29,55 @@ const loginUser = (email, password) => {
 
         });
 }
+//This function will create a user and make entry of user in user collections
+const signUpUser = (email, password, name) => {
+    console.log(email, name, password)
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(cred => {
+        firebase.firestore().collection('users').doc(cred.user.uid).set({
+            name: name
+        })
+            .catch(err => {
+                console.log(err)
+            })
+    })
+}
 
+//If user is going to sign in
 const userLoginForm = document.querySelector('.user-login')
 const userEmail = document.querySelector('.user-email')
 const userPassword = document.querySelector('.user-password')
+
+const signup = document.querySelector(".signup")
+signup.style.display = "none"
+
+
+//If user is going to sign up
+const userSignupForm = document.querySelector(".user-signup")
+const newUserName = document.querySelector(".new-usr-name")
+const newUserEmail = document.querySelector(".new-usr-email")
+const newUserPass = document.querySelector(".new-usr-password")
+
+
+//Buttons events
+const signin = document.querySelector(".signin")
+const signUpBtn = document.querySelector(".cred-info")
+
+signUpBtn.addEventListener("click", () => {
+    if (signup.style.display == "none") {
+        signup.style.display = "block"
+        signin.style.display = "none"
+        signUpBtn.innerHTML = "Login"
+    } else {
+        signin.style.display = "block"
+        signup.style.display = "none"
+        signUpBtn.innerHTML = "Create an Account"
+    }
+})
+
+userSignupForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    signUpUser(newUserEmail.value, newUserPass.value, newUserName.value)
+})
 
 userLoginForm.addEventListener('submit', (e) => {
     e.preventDefault()

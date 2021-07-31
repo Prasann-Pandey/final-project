@@ -92,4 +92,43 @@
     color: rgb(35, 168, 242);
   }
   
-  
+  .auth-btn{
+    text-align: center;
+  }
+
+  .btn{
+    display: block;
+    padding: 8px 12px;
+    background-color: crimson;
+    color: white;
+    border:none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .btn:hover{
+    border:2px crimson solid;
+    color:crimson;
+    background: transparent;
+  }
+  .signup-btn{
+    padding: 8px 12px;
+    background-color: crimson;
+    color: white;
+    border:none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .signup-btn:hover{
+    border:2px crimson solid;
+    color:crimson;
+    background: transparent;
+  }
+
+  .cred-info{
+    text-decoration: underline;
+    cursor: pointer;
+  }

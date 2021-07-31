@@ -11,33 +11,32 @@
 </head>
 
 <body>
-    <!-- <div class="container">
+    <div class="container signup">
         <h1>Sign Up</h1>
-        <form action="#">
+        <form action="#" class="user-signup">
             <div>
-                <p class="label email">Email</p>
-                <input type="email" name="email">
+                <p class="label name">Full Name</p>
+                <input type="text" name="name" class="new-usr-name">
             </div>
             <div>
-                <p class="label username">Username</p>
-                <input type="text" name="username">
+                <p class="label email">Email</p>
+                <input type="email" name="email" class="new-usr-email">
             </div>
             <div>
                 <p class="label password">Password</p>
-                <input type="password" name="password">
+                <input type="password" name="password" class="new-usr-password">
             </div>
             <div>
                 <p class="label confirm-password">Confirm Password</p>
                 <input type="password" name="confirm">
             </div>
-            <div clas="btn">
-                <button>Sign Up</button>
-            </div>
+
+            <input type="submit" class="btn" value="Sign Up">
         </form>
-    </div> -->
+    </div>
 
     <!-- login form -->
-    <div class="container">
+    <div class="container signin">
         <h1>Sign In</h1>
         <form action="#" class="user-login">
             <div>
@@ -48,10 +47,12 @@
                 <p class="label password">Password</p>
                 <input type="password" name="password" class="user-password" required>
             </div>
-            <div clas="btn">
-                <button>Sign In</button>
-            </div>
+            <input type="submit" value="Sign In" class="btn">
         </form>
+    </div>
+    <div class="auth-btn">
+        <a class="cred-info">Create a new user</a>
+        <!-- <button class="signup-btn">Create an User</button> -->
     </div>
 </body>
 <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>

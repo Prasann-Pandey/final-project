@@ -578,6 +578,9 @@ footer span a:hover{
     .menu-btn i.active:before{
         content: "\f00d";
     }
+    .menu li a:hover{
+        color: crimson;
+    }
     .navbar .menu{
         position: fixed;
         height: 100vh;

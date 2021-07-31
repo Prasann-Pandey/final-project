@@ -1,10 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
+@import url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
  body {
 	 display: flex;
 	 height: 100vh;
 	 justify-content: center;
 	 align-items: center;
 	 background: #c0392b;
+	 background: crimson;
 	 font-family: Raleway;
 	 color: white;
 	 letter-spacing: 1px;
@@ -71,6 +75,10 @@ a:hover{
 	 color: #fff;
 }
 
+.home-btn a{
+	display: block;
+	margin-top: 20px;
+}
 .usr-data-sub:hover {
 	cursor: pointer;
 }

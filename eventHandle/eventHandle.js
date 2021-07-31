@@ -6,6 +6,11 @@ const branch = document.querySelector(".branch")
 
 const eventForm = document.querySelector(".signup")
 
+const thankyou = document.querySelector(".thank-you")
+thankyou.style.display = "none"
+
+const card = document.querySelector(".card-form")
+
 var firebaseConfig = {
     apiKey: "AIzaSyCyGB8LMzEVHSCUlvCY3bzp8uFpLnWQUAQ",
     authDomain: "anukunj-b5764.firebaseapp.com",
@@ -28,7 +33,8 @@ eventForm.addEventListener("submit", (e) => {
         "email": email.value
     })
         .then(res => {
-            alert("Docs added")
+            card.style.display = "none"
+            thankyou.style.display = "block"
         })
         .catch(err => {
             console.log(err)

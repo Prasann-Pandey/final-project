@@ -11,6 +11,13 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+const beforeLogin = document.querySelector(".before-login")
+const afterLogin = document.querySelector(".after-login")
+
+const tbodyParent = document.querySelector(".tbody-parent")
+const userInfo = document.querySelector(".usr-info")
+
+
 //Credential for signing in
 const loginUser = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -21,16 +28,30 @@ const loginUser = (email, password) => {
             firebase.firestore().collection('users').doc(user.uid).get()
                 .then(res => {
                     //User Name
-                    console.log(res.data())
+                    let tempel = document.createElement("H3")
+                    tempel.innerText = `Hi ${res.data().name}, Welcome`
+                    userInfo.appendChild(tempel)
                 })
 
             //UID of user
             console.log(user.uid)
 
+            //Disable form screen and open user screen
+            beforeLogin.style.display = "none"
+            afterLogin.style.display = "block"
+
             //Function for retriving all events data
             firebase.firestore().collection('events').get()
                 .then(res => {
-                    res.docs.forEach(el => console.log(el.data()))
+                    res.docs.forEach(el => {
+                        let temp = document.createElement("TR")
+                        temp.innerHTML = `<td>${el.data().first_name}</td>
+                        <td>${el.data().last_name}</td>
+                        <td>${el.data().email}</td>
+                        <td>${el.data().mobile}</td>`
+                        tbodyParent.appendChild(temp)
+
+                    })
                 })
         })
         .catch((error) => {

@@ -24,7 +24,7 @@ const loginUser = (email, password) => {
                 })
         })
         .catch((error) => {
-            alert("Worng Credentials")
+            alert("Wrong Credentials")
             console.log(error)
 
         });

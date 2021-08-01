@@ -8,6 +8,8 @@
   body{
     width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
   }
   
   .container{
@@ -127,8 +129,123 @@
     color:crimson;
     background: transparent;
   }
-
-  .cred-info{
+  .before-login{
+    width: 600px;
+  }
+  .cred-info:hover{
     text-decoration: underline;
     cursor: pointer;
   }
+
+  .signin-err{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: crimson;
+  }
+  .signup-err{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: crimson;
+  }
+  .acc-create{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: green;
+  }
+
+  .usr-info h3{
+    font-weight: 800;
+    text-transform: capitalize;
+    margin: 4% 0% 3% 0%;
+  }
+
+  .signout-a{
+    display: block;
+    margin-top: 4%;
+    text-align: end;
+  }
+/* table style */
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  max-width: 800px;
+  table-layout: fixed;
+  font-size: 16px;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}

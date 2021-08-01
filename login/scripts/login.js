@@ -17,6 +17,7 @@ const afterLogin = document.querySelector(".after-login")
 const tbodyParent = document.querySelector(".tbody-parent")
 const userInfo = document.querySelector(".usr-info")
 
+const signupErr = document.querySelector(".signup-err")
 
 //Credential for signing in
 const loginUser = (email, password) => {
@@ -51,14 +52,12 @@ const loginUser = (email, password) => {
                         <td>${el.data().interest}</td>
                         <td>${el.data().mobile}</td>`
                         tbodyParent.appendChild(temp)
-
                     })
                 })
         })
         .catch((error) => {
-            alert("Wrong Credentials")
-            console.log(error)
-
+            const signinErr = document.querySelector(".signin-err")
+            signinErr.innerText = error.message
         });
 }
 //This function will create a user and make entry of user in user collections
@@ -67,11 +66,15 @@ const signUpUser = (email, password, name) => {
     firebase.auth().createUserWithEmailAndPassword(email, password).then(cred => {
         firebase.firestore().collection('users').doc(cred.user.uid).set({
             name: name
+        }).then(res => {
+            const accCreate = document.querySelector(".acc-create")
+            signupErr.innerText = ''
+            accCreate.innerText = "Your account has succesfully registered , now login"
         })
-            .catch(err => {
-                console.log(err)
-            })
     })
+        .catch(err => {
+            signupErr.innerText = err.message
+        })
 }
 
 //If user is going to sign in
